@@ -3,14 +3,7 @@ import memory_profiler
 from memory_profiler import profile
 import time
 import matplotlib.pyplot as plt
-
-# @profile
-# def sort_list():
-#     lst = []
-#     for i in range(1, 101):
-#         lst.append(i)
-#         lst.sort()
-    
+   
 @profile
 def sort_mylist(n):
     lst = []
@@ -34,8 +27,7 @@ for i in range(1, 101):
     sort_mylist(test_list[0:i])
     # end = time.perf_counter()
     # final = end - start
-    x = memory_profiler.memory_usage()
-
+    x = memory_profiler.memory_usage() 
     list1.append(x[0])
     #print(list1)
 

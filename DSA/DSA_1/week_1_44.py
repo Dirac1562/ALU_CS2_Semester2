@@ -13,8 +13,11 @@ def sort_list():
     lst_time = []
     lst_space = []
     for i in range(1, 101):
+        seconds_1 = time.time()
         lst.append(i)
-        time_t = timeit.timeit(setup = code_set, stmt=lst.sort, number= 1)
+        max_v = max(lst)
+        seconds_2 = time.time()
+        time_t = seconds_2 - seconds_1 
         space = memory_profiler.memory_usage()
         if len(lst_space) == 0:
             lst_space.append(space[-1])
@@ -24,6 +27,7 @@ def sort_list():
             lst_time.append(time_t)
         else:
             lst_time.append(time_t + lst_time[-1])
+    print(f"The max valus is {max_v}")
     return lst_time, lst_space, lst
 
 lst_time, lst_space, lst = sort_list()
