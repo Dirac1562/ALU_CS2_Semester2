@@ -27,12 +27,6 @@ def sort_list():
     return lst_time, lst_space, lst
 
 lst_time, lst_space, lst = sort_list()
-# print("\n =======lst time: ")
-# print(lst_time)
-# print("\n =======lst space: ")
-# print(lst_space)
-# print("\n =======lst : ")
-# print(lst)
 
 plt.plot(lst, lst_space)
 plt.xlabel('List Length')

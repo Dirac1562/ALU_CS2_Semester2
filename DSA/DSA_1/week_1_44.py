@@ -8,14 +8,14 @@ import matplotlib.pyplot as plt
 code_set = "import time"
 
 @profile
-def sort_list():
+def sort_list(lstt):
     lst = []
     lst_time = []
     lst_space = []
-    for i in range(1, 101):
+    for i in lstt:
         seconds_1 = time.time()
         lst.append(i)
-        max_v = max(lst)
+        max_v = max(lstt)
         seconds_2 = time.time()
         time_t = seconds_2 - seconds_1 
         space = memory_profiler.memory_usage()
@@ -30,13 +30,9 @@ def sort_list():
     print(f"The max valus is {max_v}")
     return lst_time, lst_space, lst
 
-lst_time, lst_space, lst = sort_list()
-# print("\n =======lst time: ")
-# print(lst_time)
-# print("\n =======lst space: ")
-# print(lst_space)
-# print("\n =======lst : ")
-# print(lst)
+
+listA = ["apple", "banana", "candles"]
+lst_time, lst_space, lst = sort_list(listA)
 
 plt.plot(lst, lst_space)
 plt.xlabel('List Length')
